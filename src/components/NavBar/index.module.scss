@@ -1,0 +1,23 @@
+.navbarContainer {
+  height: 10vh;
+}
+
+.title {
+  top: 76px;
+  left: 28px;
+  width: 108px;
+  height: 64px;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 64px;
+}
+
+.btn {
+  position: absolute;
+  top: 76px;
+  right: 20px;
+  width: 160px;
+  background-color: #000000;
+  border-radius: 9999px;
+}

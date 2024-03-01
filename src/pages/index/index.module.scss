@@ -1,0 +1,89 @@
+.container {
+  height: 100vh;
+}
+
+.mapContainer {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 713px;
+  height: 713px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border-left: solid 2px #000000;
+  border-right: solid 2px #000000;
+  border-top: solid 2px #000000;
+  border-bottom: solid 2px #000000;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  width: 713px;
+  height: 100px;
+  margin: 20px 20px 20px 20px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border-left: solid 2px #000000;
+  border-right: solid 2px #000000;
+  border-top: solid 2px #000000;
+  border-bottom: solid 2px #000000;
+}
+
+.searchIcon {
+  left: 18px;
+  top: 18px;
+  width: 64px;
+  height: 64px;
+}
+
+.input {
+  left: 36px;
+  top: 18px;
+  width: 577px;
+  height: 64px;
+  border-bottom: solid 3px #E4E4E7;
+}
+
+.weatherBox {
+  display: flex;
+  flex-direction: row;
+  margin: 0 20px 20px 20px;
+  padding: 20px 32px 20px 40px;
+  width: 713px;
+  height: 130px;
+  border-radius: 16px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.weatherLeft {
+  height: 84px;
+  width: 286px;
+}
+
+.locationsIcon {
+  top: 18px;
+  width: 36px;
+  height: 48px;
+}
+
+.locationsInfo {
+  display: flex;
+  flex-direction: column;
+  left: 60px;
+  top: -44px;
+}
+
+.locationstitle {
+  color: #000000;
+  font-weight: 300;
+  font-size: 26px;
+}
+
+.locationsName {
+  color: #000000;
+  top: 4px;
+  font-size: 30px;
+  font-weight: 600;
+}
