@@ -1,5 +1,6 @@
 export default defineAppConfig({
   pages: [
+    'pages/travel/index',
     'pages/index/index'
   ],
   window: {

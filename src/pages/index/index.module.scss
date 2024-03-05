@@ -1,46 +1,41 @@
 .container {
-  height: 100vh;
+  // 自动适应
+  // height: 70rem;
 }
 
 .mapContainer {
   margin-left: 20px;
   margin-right: 20px;
-  width: 713px;
-  height: 713px;
+  width: 22.25rem;
+  height: 22.25rem;
   background-color: #ffffff;
   border-radius: 16px;
-  border-left: solid 2px #000000;
-  border-right: solid 2px #000000;
-  border-top: solid 2px #000000;
-  border-bottom: solid 2px #000000;
+  border: #000000 solid 2px;
 }
 
 .search {
   display: flex;
   flex-direction: row;
-  width: 713px;
-  height: 100px;
+  width: 22.25rem;
+  height: 3.2rem;
   margin: 20px 20px 20px 20px;
   background-color: #ffffff;
   border-radius: 16px;
-  border-left: solid 2px #000000;
-  border-right: solid 2px #000000;
-  border-top: solid 2px #000000;
-  border-bottom: solid 2px #000000;
+  border: #000000 solid 2px;
 }
 
 .searchIcon {
-  left: 18px;
-  top: 18px;
-  width: 64px;
-  height: 64px;
+  left: 0.56rem;
+  top: 0.56rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .input {
-  left: 36px;
-  top: 18px;
-  width: 577px;
-  height: 64px;
+  left: 1.12rem;
+  top: 0.56rem;
+  width: 18.3rem;
+  height: 2rem;
   border-bottom: solid 3px #E4E4E7;
 }
 
@@ -49,8 +44,8 @@
   flex-direction: row;
   margin: 0 20px 20px 20px;
   padding: 20px 32px 20px 40px;
-  width: 713px;
-  height: 130px;
+  width: 22.25rem;
+  height: 4.1rem;
   border-radius: 16px;
   border: 2px solid #000000;
   box-sizing: border-box;
@@ -58,21 +53,21 @@
 }
 
 .weatherLeft {
-  height: 84px;
-  width: 286px;
+  height: 2.6rem;
+  width: 8.9rem;
 }
 
 .locationsIcon {
-  top: 18px;
-  width: 36px;
-  height: 48px;
+  top: 0.56rem;
+  width: 1.12rem;
+  height: 1.5rem;
 }
 
 .locationsInfo {
   display: flex;
   flex-direction: column;
-  left: 60px;
-  top: -44px;
+  left: 1.85rem;
+  top: -1.37rem;
 }
 
 .locationstitle {
@@ -83,7 +78,53 @@
 
 .locationsName {
   color: #000000;
-  top: 4px;
+  top: 0.1rem;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.weatherRight {
+  left: 4.7rem;
+  height: 2.6rem;
+  width: 8.9rem;
+}
+
+.weatherIcon {
+  top: 0.56rem;
+  width: 1.12rem;
+  height: 1.5rem;
+}
+
+.weatherInfo {
+  display: flex;
+  flex-direction: column;
+  left: 1.85rem;
+  top: -1.37rem;
+}
+
+.weathertitle {
+  color: #000000;
+  font-weight: 300;
+  font-size: 26px;
+}
+
+.weatherName {
+  color: #000000;
+  top: 0.1rem;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.infoTitle {
+  margin: 0.8rem auto 0.15rem auto;
+  color: #000000;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.4rem;
+}
+
+.infoList {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
