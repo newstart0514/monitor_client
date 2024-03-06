@@ -1,0 +1,90 @@
+.container {
+  // 自动适应
+  height: 50rem;
+}
+
+.mapContainer {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 22.25rem;
+  height: 22.25rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: #000000 solid 2px;
+}
+
+.weatherBox {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 20px 20px 20px;
+  padding: 20px 32px 20px 40px;
+  width: 22.25rem;
+  height: 4.1rem;
+  border-radius: 16px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.weatherLeft {
+  height: 2.6rem;
+  width: 8.9rem;
+}
+
+.locationsIcon {
+  top: 0.56rem;
+  width: 1.12rem;
+  height: 1.5rem;
+}
+
+.locationsInfo {
+  display: flex;
+  flex-direction: column;
+  left: 1.85rem;
+  top: -1.37rem;
+}
+
+.locationstitle {
+  color: #000000;
+  font-weight: 300;
+  font-size: 26px;
+}
+
+.locationsName {
+  color: #000000;
+  top: 0.1rem;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.weatherRight {
+  left: 4.7rem;
+  height: 2.6rem;
+  width: 8.9rem;
+}
+
+.weatherIcon {
+  top: 0.56rem;
+  width: 1.12rem;
+  height: 1.5rem;
+}
+
+.weatherInfo {
+  display: flex;
+  flex-direction: column;
+  left: 1.85rem;
+  top: -1.37rem;
+}
+
+.weathertitle {
+  color: #000000;
+  font-weight: 300;
+  font-size: 26px;
+}
+
+.weatherName {
+  color: #000000;
+  top: 0.1rem;
+  font-size: 30px;
+  font-weight: 700;
+}

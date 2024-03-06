@@ -23,7 +23,7 @@ export default class IndexCard extends Component<PropsWithChildren> {
           <Text numberOfLines={5} style={styles.content}>{content}</Text>
         </View>
         <View style={styles.buttonContainer}>
-          <Button style={styles.button} size="mini">查看详情</Button>
+          <Button style={styles.button} size="mini" type="primary">查看详情</Button>
         </View>
       </View>
     );

@@ -1,8 +1,45 @@
 .container {
-  width: 20.24rem;
-  margin: 0.65rem 0.65rem;
-  height: 5rem;
+  width: 22.25rem;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  height: 5.5rem;
   border: #000000 2px solid;
   background-color: #ffffff;
   border-radius: 16px;
+}
+
+.title {
+  left: 0.7rem;
+  top: 0.5rem;
+}
+
+.title_text {
+  color: #000000;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.5rem;
+}
+
+.content {
+  left: 0.7rem;
+  top: 0.7rem;
+}
+
+.content_text {
+  margin-top: 0.2rem;
+  color: #52525b;
+  font-weight: 400;
+  font-size: 26px;
+}
+
+.button_container {
+  left: 17rem;
+  bottom: 2.3rem;
+}
+
+.button {
+  border-radius: 9999px;
+  background-color: #a3e635;
+  width: 4rem;
 }

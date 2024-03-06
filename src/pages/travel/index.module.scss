@@ -1,15 +1,17 @@
 .container {
   // 自动适应
-  height: 70rem;
+  // height: 70rem;
 }
 
-.school {
-  margin-top: 1rem;
+.content {
+  margin-top: 0.5rem;
+}
+
+.title {
   left: 1rem;
-}
-
-.schoolTitle {
   color: #000000;
   font-weight: 800;
-  font-size: 36px;
+  font-size: 38px;
+  margin-bottom: 0.5rem;
+  line-height: 1.5rem;
 }
