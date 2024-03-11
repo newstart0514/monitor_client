@@ -4,8 +4,8 @@ import styles from './index.module.scss'
 
 export default class IndexCard extends Component<PropsWithChildren> {
   static defaultProps = {
-    title: "信息标题",
-    content: "信息很重要，信息很正义，信息very good，保护信息，人人有责",
+    title: "无标题",
+    content: "无内容",
     img: "https://ide.code.fun/api/image?token=65e59070eb5b55001132901f&name=0061554342d6c780227fe2884709370f.png",
   }
   constructor(props) {

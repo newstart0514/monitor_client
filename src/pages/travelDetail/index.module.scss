@@ -1,6 +1,6 @@
 .container {
   // 自动适应
-  height: 50rem;
+  height: 100vh;
 }
 
 .mapContainer {
@@ -87,4 +87,8 @@
   top: 0.1rem;
   font-size: 30px;
   font-weight: 700;
+}
+
+.detail {
+  height: 14.5rem;
 }

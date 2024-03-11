@@ -3,8 +3,16 @@ import { View, Text, Image, Input } from '@tarojs/components'
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './index.module.scss'
 import NavBar from '../../components/NavBar';
+import InfoCard from '../../components/InfoCard';
 
 export default class Travel extends Component<PropsWithChildren> {
+  detail = {
+    '运营公司': '广州地铁',
+    '始发站': '天河区天河公园',
+    '终点站': '白云区江高镇',
+    '全程总耗时': '1h',
+    '全程总票价': '10元'
+  }
 
   render () {
     return (
@@ -36,6 +44,9 @@ export default class Travel extends Component<PropsWithChildren> {
               <Text style={styles.weatherName}>26°C</Text>
             </View>
           </View>
+        </View>
+        <View style={styles.detail}>
+          <InfoCard title='出行详细信息' content={this.detail} />
         </View>
       </LinearGradient>
     )

@@ -1,9 +1,12 @@
 export default defineAppConfig({
   pages: [
-    'pages/travelDetail/index',
+    'pages/processEdit/index',
     'pages/index/index',
     'pages/travel/index',
-    
+    'pages/travelDetail/index',
+    'pages/AIChat/index',
+    'pages/process/index',
+    'pages/content/index',
   ],
   window: {
     backgroundTextStyle: 'light',
