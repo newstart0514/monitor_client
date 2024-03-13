@@ -1,0 +1,73 @@
+.container {
+  flex: 1;
+  height: 103vh;
+}
+
+.logo {
+  top: 5rem;
+  width: 10rem;
+  height: 10rem;
+  resize-mode: contain;
+  align-self: center;
+}
+
+.card {
+  top: 5rem;
+  margin: 10px 20px 20px 20px;
+  padding: 0.8rem;
+  border-radius: 30px;
+  background-color: #ffffff;
+  border: #ffffff 2px solid;
+}
+
+.header {
+  height: 3rem;
+  line-height: 3rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  border-bottom: #d1d5db 3px solid;
+}
+
+.title {
+  width: 5rem;
+  flex-direction: row;
+  color: #000000;
+  font-weight: 700;
+  font-size: 36px;
+  align-self: center;
+}
+
+.row {
+  margin: 20px 20px 20px 20px;
+  line-height: 2rem;
+  // flex-direction: row;
+}
+
+.key {
+  color: #000000;
+  font-size: 30px;
+  margin-left: 0.3rem;
+}
+
+.value {
+  height: 2.5rem;
+  border-radius: 60px;
+  padding: 20px 40px 20px 40px;
+  margin-top: 0.2rem;
+  background-color: #f6f6f6;
+  border: #000000 3px solid;
+}
+
+.login {
+  margin-top: 0.8rem;
+  border-radius: 9999px;
+  height: 2.2rem;
+  background-color: #a3e635;
+}
+
+.register {
+  height: 2.2rem;
+  border-radius: 9999px;
+  background-color: #000000;
+  margin-top: 0.5rem;
+}

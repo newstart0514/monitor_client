@@ -4,7 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import styles from './index.module.scss'
 import NavBar from '../../components/NavBar';
 
-export default class Content extends Component<PropsWithChildren> {
+export default class ProcessEdit extends Component<PropsWithChildren> {
 
   render () {
     return (

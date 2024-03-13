@@ -1,12 +1,16 @@
 export default defineAppConfig({
   pages: [
-    'pages/processEdit/index',
+    'pages/personal/index',
     'pages/index/index',
     'pages/travel/index',
     'pages/travelDetail/index',
     'pages/AIChat/index',
     'pages/process/index',
     'pages/content/index',
+    'pages/processEdit/index',
+    'pages/processDetail/index',
+    'pages/login/index',
+    'pages/register/index',
   ],
   window: {
     backgroundTextStyle: 'light',
