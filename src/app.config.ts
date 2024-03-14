@@ -1,6 +1,6 @@
 export default defineAppConfig({
   pages: [
-    'pages/personal/index',
+    'pages/personalEdit/index',
     'pages/index/index',
     'pages/travel/index',
     'pages/travelDetail/index',
@@ -11,6 +11,7 @@ export default defineAppConfig({
     'pages/processDetail/index',
     'pages/login/index',
     'pages/register/index',
+    'pages/personal/index',
   ],
   window: {
     backgroundTextStyle: 'light',

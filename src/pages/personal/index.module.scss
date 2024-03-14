@@ -16,3 +16,56 @@
   height: 3.5rem;
   border-radius: 9999px;
 }
+
+.card_header {
+  flex-direction: row;
+}
+
+.card_header_info {
+  margin-left: 1rem;
+}
+
+.card_header_info_name {
+  color: #000000;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+card_header_info_desc {
+  color: #52525b;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.card_hr {
+  width: 100%;
+  border: #52525b 0.5px solid;
+  height: 1px;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.card_header2 {
+  color: #000000;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.card_item {
+  flex-direction: row;
+  margin: 20px 10px 10px 10px;
+}
+
+.item_png {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.item_title {
+  line-height: 1.8rem;
+  color: #000000;
+  font-weight: 400;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+}
