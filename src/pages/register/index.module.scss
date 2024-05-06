@@ -1,6 +1,7 @@
 .container {
   flex: 1;
   // height: 103vh;
+  margin-bottom: 2vh;
 }
 
 .logo {
@@ -70,4 +71,38 @@
   border-radius: 9999px;
   background-color: #000000;
   margin-top: 0.5rem;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.inputContent {
+  width: 70%;
+  height: 2.5rem;
+  border-radius: 60px;
+  padding: 20px 40px 20px 40px;
+  margin-top: 0.2rem;
+  background-color: #f6f6f6;
+  border: #000000 3px solid;
+}
+
+.btn {
+  margin-left: 2%;
+  width: 28%;
+  height: 2.5rem;
+  border-radius: 9999px;
+  // background-color: #a3e635;
+}
+
+.back {
+  position: absolute;
+  top: 5vh;
+  left: 30px;
+  font-size: 32px;
+  cursor: pointer;
+  color: #000000;
+  font-weight: 700;
 }

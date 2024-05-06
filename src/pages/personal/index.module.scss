@@ -1,5 +1,5 @@
 .container {
-  height: 103vh;
+  height: 96.3vh;
 }
 
 .card {
@@ -68,4 +68,26 @@ card_header_info_desc {
   font-weight: 400;
   font-size: 0.85rem;
   margin-left: 0.5rem;
+}
+
+.btn {
+  width: 5rem;
+  background-color: #000000;
+  border-radius: 9999px;
+}
+
+.cancelBtn {
+  width: 5rem;
+  background-color: gray;
+  border-radius: 9999px;
+}
+
+.boxCard {
+  width: 22.25rem;
+  padding: 20px;
+  margin: 10px 20px 20px 20px;
+  border-radius: 16px;
+  border: 2px solid #000000;
+  background-color: #ffffff;
+  align-items: center;
 }

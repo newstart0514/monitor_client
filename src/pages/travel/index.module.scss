@@ -1,6 +1,6 @@
 .container {
   // 自动适应
-  // height: 70rem;
+  height: 96.2vh;
 }
 
 .content {
@@ -14,4 +14,9 @@
   font-size: 38px;
   margin-bottom: 0.5rem;
   line-height: 1.5rem;
+}
+
+.empty {
+  align-items: center;
+  margin-bottom: 40px;
 }

@@ -1,6 +1,6 @@
 .container {
   // 自动适应
-  // height: 70rem;
+  height: 96.4vh;
 }
 
 .mapContainer {
@@ -11,6 +11,7 @@
   background-color: #ffffff;
   border-radius: 16px;
   border: #000000 solid 2px;
+  padding: 0.25rem;
 }
 
 .search {
@@ -127,4 +128,33 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.footer {
+  width: 22.25rem;
+  height: 11.5rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: #000000 solid 2px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.swiper {
+  width: 98%;
+  height: 96%;
+  margin: 1%;
+}
+
+.swiperItem {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.swiperTitle {
+  position: absolute;
+  bottom: 40px;
+  font-size: 24px;
+  color: #ffffff;
 }

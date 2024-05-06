@@ -1,9 +1,9 @@
 import { Component, PropsWithChildren } from 'react'
-import { View, Input, Button, Image } from '@tarojs/components'
+import { View, Button, Image, WebView } from '@tarojs/components'
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './index.module.scss'
 import NavBar from '../../components/NavBar';
-import ChatBox from '../../components/ChatBox';
+// import ChatBox from '../../components/ChatBox';
 
 export default class AIChat extends Component<PropsWithChildren> {
 
@@ -23,13 +23,16 @@ export default class AIChat extends Component<PropsWithChildren> {
             </View>
             <Button type='primary' style={styles.btn} size='mini'>重置会话</Button>
           </View>
-          <ChatBox content='您好，我是小黄，您有什么需要帮助的吗？' type='system' />
+          {/* <ChatBox content='您好，我是小黄，您有什么需要帮助的吗？' type='system' />
           <ChatBox content='您好，小黄，我是小李，很高兴认识您!' type='user' />
           <View style={styles.inputContainer}>
             <Input placeholder='请输入您的问题...' style={styles.input} />
             <Button type='primary' style={styles.submitBtn} size='mini'>
               <Image src='https://s2.loli.net/2024/03/07/CIQ2w9OU46mpXk3.png' style={styles.icon} />
             </Button>
+          </View> */}
+          <View style={styles.chat}>
+            <WebView src='https://chat.lbgblog.xyz/' />
           </View>
         </View>
       </LinearGradient>

@@ -1,38 +1,139 @@
-import { Component, PropsWithChildren } from 'react'
+import { Component } from 'react'
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './index.module.scss'
 import NavBar from '../../components/NavBar';
-import { Image, View } from '@tarojs/components';
+import { Image, View, Button } from '@tarojs/components';
 import DescRow from '../../components/DescRow';
+import Taro from '@tarojs/taro';
+import { inject } from 'mobx-react';
+import request from '../../utils/api';
+import { maskEmail, maskName, maskPhone, maskStudentID } from '../../utils/mask';
 
-export default class Personal extends Component<PropsWithChildren> {
+@inject('store')
+export default class Personal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLogin: false
+    }
+  }
+
+  async componentDidMount(): Promise<void> {
+    await this.getUserInfo();
+  }
+
+  goToLogin = () => {
+    Taro.redirectTo({
+      url: 'pages/login/index'
+    })
+  }
+
+  goToRegister = () => {
+    Taro.redirectTo({
+      url: 'pages/register/index'
+    })
+  }
+
+  goToPasswordEdit = () => {
+    Taro.navigateTo({
+      url: 'pages/passwordEdit/index'
+    })
+  }
+
+  goToPersonalEdit = () => {
+    Taro.navigateTo({
+      url: 'pages/personalEdit/index'
+    })
+  }
+
+  getUserInfo = async () => {
+    const resq = await request('/user/userInfo', {}, 'GET', true);
+    if (resq.code === 200) {
+      this.props.store.userStore.setUser(resq.data.data);
+      this.setState(prev => ({
+        isLogin: true
+      }))
+    }
+  }
+
   render () {
-    const user = {
-      name: '李佰贵',
-      role: '超级管理员',
-      avatar: 'https://picsum.photos/200/300',
-      phone: 13800138000,
-      email: '1418591636@qq.com',
-      student_id: '123456789',
-      from: '20通信88班',
-      guardian_name: '李*发',
-      guardian_phone: 13800138000,
+
+    const loginView = () => {
+      let info = {...this.props.store.userStore.userInfo};
+      if (info.role === '2') info.role = '超级管理员';
+      else if(info.role === '1') info.role = '普通管理员'
+      else info.role = '普通用户'
+
+      const keys = Object.keys(info);
+      const dic = {
+        phone: '手机号码',
+        email: '邮箱',
+        student_id: '学号',
+        from: '班级',
+        guardian_name: '监护人姓名',
+        guardian_phone: '监护人手机号码',
+      }
+      const renderItems = keys.map((key, index) => {
+        if (key === 'from') {
+          return <DescRow title={dic[key]} value={info[key]} key={index} />
+        } else if(key === 'email') {
+          return <DescRow title={dic[key]} value={maskEmail(info[key])} key={index} />
+        } else if(key === 'guardian_name') {
+          return <DescRow title={dic[key]} value={maskName(info[key])} key={index} />
+        } else if(key === 'phone' || key === 'guardian_phone') {
+          return <DescRow title={dic[key]} value={maskPhone(info[key])} key={index} />
+        } else if(key === 'student_id') {
+          return <DescRow title={dic[key]} value={maskStudentID(info[key])} key={index} />
+        } else {
+          return null
+        }
+      });
+
+      return (
+        <>
+          <View style={styles.card}>
+            <View style={styles.card_header}>
+              <Image src='https://picsum.photos/200/300' style={styles.avatar} />
+              <View style={styles.card_header_info}>
+                <View style={styles.card_header_info_name}>{info.username}</View>
+                <View style={styles.card_header_info_desc}>{info.role}</View>
+              </View>
+            </View>
+            <View style={styles.card_hr}></View>
+            <View style={styles.card_info}>
+              {renderItems}
+            </View>
+          </View>
+          <View style={styles.card}>
+            <View style={styles.card_header2}>设置</View>
+            <View style={styles.card_item} onClick={this.goToPasswordEdit}>
+              <Image src='https://s21.ax1x.com/2024/04/10/pFOhxr6.png' style={styles.item_png} />
+              <View style={styles.item_title}>修改密码</View>
+            </View>
+            <View style={styles.card_item} onClick={this.goToPersonalEdit}>
+              <Image src='https://s21.ax1x.com/2024/04/10/pFOhzqK.png' style={styles.item_png} />
+              <View style={styles.item_title}>修改个人资料</View>
+            </View>
+          </View>
+        </>
+      )
     }
 
-    const dic = {
-      phone: '手机号码',
-      email: '邮箱',
-      student_id: '学号',
-      from: '班级',
-      guardian_name: '监护人姓名',
-      guardian_phone: '监护人手机号码',
+    const unLoginView = () => {
+      return (
+        <>
+          <View style={styles.boxCard}>
+            <View style={styles.card_header2}>未登录，请选择：</View>
+            <View style={styles.card_item}>
+              <Button type='primary' style={styles.btn} size='mini' onClick={this.goToLogin}>用户登录</Button>
+            </View>
+            <View style={styles.card_item}>
+              <Button type='primary' style={styles.cancelBtn} size='mini' onClick={this.goToRegister}>用户注册</Button>
+            </View>
+          </View>
+        </>
+      )
     }
-
-    const keys = Object.keys(user);
-    const renderItems = keys.map((key, index) => {
-      if(key === 'avatar' || key === 'name' || key === 'role') return null;
-      else return <DescRow title={dic[key]} value={user[key]} key={index} />
-    });
 
     return (
       <LinearGradient
@@ -41,38 +142,15 @@ export default class Personal extends Component<PropsWithChildren> {
         style={styles.container}
       >
         <NavBar title='个人中心' />
-        <View style={styles.card}>
-          <View style={styles.card_header}>
-            <Image src='https://picsum.photos/200/300' style={styles.avatar} />
-            <View style={styles.card_header_info}>
-              <View style={styles.card_header_info_name}>{user.name}</View>
-              <View style={styles.card_header_info_desc}>{user.role}</View>
-            </View>
-          </View>
-          <View style={styles.card_hr}></View>
-          <View style={styles.card_info}>
-            {renderItems}
-          </View>
-        </View>
-        <View style={styles.card}>
-          <View style={styles.card_header2}>设置</View>
-          <View style={styles.card_item}>
-            <Image src='https://ide.code.fun/api/image?token=65f263e5731c750011ff634d&name=e4366256f062cb5c0136af76dda70fd3.png' style={styles.item_png} />
-            <View style={styles.item_title}>修改密码</View>
-          </View>
-          <View style={styles.card_item}>
-            <Image src='https://ide.code.fun/api/image?token=65f263e5731c750011ff634d&name=fe0d0df61868ab9e29e493b610090f1f.png' style={styles.item_png} />
-            <View style={styles.item_title}>修改个人资料</View>
-          </View>
-        </View>
+        {this.state.isLogin ? loginView() : unLoginView()}
         <View style={styles.card}>
           <View style={styles.card_header2}>其他</View>
           <View style={styles.card_item}>
-            <Image src='https://ide.code.fun/api/image?token=65f263e5731c750011ff634d&name=ac6e57bb4d8df01259c9ecb7e4a206b9.png' style={styles.item_png} />
+            <Image src='https://s21.ax1x.com/2024/04/10/pFOTSld.png' style={styles.item_png} />
             <View style={styles.item_title}>帮助和反馈</View>
           </View>
           <View style={styles.card_item}>
-            <Image src='https://ide.code.fun/api/image?token=65f263e5731c750011ff634d&name=d2db82876d90697b79eb620bc17bba05.png' style={styles.item_png} />
+            <Image src='https://s21.ax1x.com/2024/04/10/pFOozSH.png' style={styles.item_png} />
             <View style={styles.item_title}>关于我们</View>
           </View>
         </View>

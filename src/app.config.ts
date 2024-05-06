@@ -12,6 +12,7 @@ export default defineAppConfig({
     'pages/register/index',
     'pages/personal/index',
     'pages/personalEdit/index',
+    'pages/passwordEdit/index',
   ],
   tabBar: {
     selectedColor: '#a3e635',
@@ -40,7 +41,7 @@ export default defineAppConfig({
         pagePath: 'pages/process/index',
         iconPath: 'static/process.png',
         selectedIconPath: 'static/process_hover.png',
-        text: '我的流程'
+        text: '我的出行'
       },
       {
         pagePath: 'pages/personal/index',
