@@ -98,6 +98,12 @@ export default class Login extends Component {
     })
   }
 
+  goToRegister = () => {
+    Taro.redirectTo({
+      url: 'pages/register/index'
+    })
+  }
+
   render () {
     const usernameInput = (e) => {
       this.setState(prev => ({
@@ -170,7 +176,7 @@ export default class Login extends Component {
           </View>
           <View style={styles.row}>
             <Button style={styles.login} size='mini' type='primary' onClick={this.login}>登录</Button>
-            <Button style={styles.register} size='mini' type='primary'>注册</Button>
+            <Button style={styles.register} size='mini' type='primary' onClick={this.goToRegister}>注册</Button>
           </View>
         </View>
       </LinearGradient>

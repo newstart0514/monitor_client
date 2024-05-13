@@ -56,6 +56,18 @@ export default class Personal extends Component {
     }
   }
 
+  logOut = () => {
+    Taro.removeStorage({
+      key: 'access_token'
+    })
+    Taro.removeStorage({
+      key: 'refresh_token'
+    })
+    this.setState(prev => ({
+      isLogin: false
+    }))
+  }
+
   render () {
 
     const loginView = () => {
@@ -97,6 +109,9 @@ export default class Personal extends Component {
               <View style={styles.card_header_info}>
                 <View style={styles.card_header_info_name}>{info.username}</View>
                 <View style={styles.card_header_info_desc}>{info.role}</View>
+              </View>
+              <View style={styles.loginBtn}>
+                <Button type='primary' style={styles.cancelBtn} size='mini' onClick={this.logOut}>退出登录</Button>
               </View>
             </View>
             <View style={styles.card_hr}></View>

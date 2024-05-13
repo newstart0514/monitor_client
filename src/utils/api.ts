@@ -6,20 +6,22 @@ let isRefreshing = false; // 标记是否正在刷新JWT
 const request = async (url, data = {}, method = 'GET', needAuth = true) => {
   showLoading({ title: '加载中...' });
   let accessToken: string = '';
-  await Taro.getStorage({
-    key: 'access_token',
-    success(result) {
-      accessToken = result.data;
-    },
-    fail(res) {
-      Taro.showToast({
-        title: '用户未登录',
-        icon: "none",
-        duration: 1000
-      });
-      return;
-    },
-  })
+  if (needAuth) {
+    await Taro.getStorage({
+      key: 'access_token',
+      success(result) {
+        accessToken = result.data;
+      },
+      fail(res) {
+        Taro.showToast({
+          title: '用户未登录',
+          icon: "none",
+          duration: 1000
+        });
+        return;
+      },
+    })
+  }
   const header = needAuth ? { 'Authorization': `Bearer ${ accessToken }` } : {};
   let resq = {
     code: 0,
